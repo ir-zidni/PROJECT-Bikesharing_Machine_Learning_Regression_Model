@@ -4,10 +4,7 @@
 * Dataset = Bikeshare
 
 # Project Introduction
-* Project ini merupakan capstone project dari module 3 Data Science Purwadhika
-* Dengan menggunakan dataset bikeshare, mencoba membuat model untuk memprediksi
-* Demand dari jumlah armada sepeda yang dibutuhkan pada suatu waktu tertentu
-* Dengan menggunakan machine learning - Regression model
+* Project ini merupakan capstone project dari module 3 Data Science Purwadhika dengan menggunakan dataset bikeshare, mencoba membuat model untuk memprediksi demand dari jumlah armada sepeda yang dibutuhkan pada suatu waktu tertentu dengan menggunakan machine learning - Regression model
 
 # Package
 * numpy 1.24.2
