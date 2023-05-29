@@ -3,6 +3,12 @@
 * Nama = Irfan Zidni/ JCDS-OL-09
 * Dataset = Bikeshare
 
+# Project Introduction
+* Project ini merupakan capstone project dari module 3 Data Science Purwadhika
+* Dengan menggunakan dataset bikeshare, mencoba membuat model untuk memprediksi
+* Demand dari jumlah armada sepeda yang dibutuhkan pada suatu waktu tertentu
+* Dengan menggunakan machine learning - Regression model
+
 # Package
 * numpy 1.24.2
 * pandas 1.5.3
