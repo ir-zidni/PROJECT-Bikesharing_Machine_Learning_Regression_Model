@@ -13,7 +13,7 @@ def load_model():
 # Function to convert hr to time of day (morning, night, afternoon, or evening)
 def time_of_day(hr):
     timeofday = []
-    if hr >= 5 & hr <=12 :
+    if hr >= 5 & hr <=12:
         timeofday = 1
     elif hr >= 13 & hr <= 17:
         timeofday = 2
@@ -66,7 +66,7 @@ def main():
     holiday = st.selectbox('Holiday or not', [0, 1])
     season = st.selectbox('Select Season', ['Winter', 'Summer', 'Spring', 'Fall'])
     temp = st.number_input('Insert normalize temperature value', min_value=0, max_value=1, placeholder="Type a number...")
-    hr = st.selectbox('Hour of the day', [list(range(0,24,1))])
+    hr = st.selectbox('Hour of the day', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23])
     day = st.selectbox('Select day', ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday'])
 
     seasons = season_code(season)
