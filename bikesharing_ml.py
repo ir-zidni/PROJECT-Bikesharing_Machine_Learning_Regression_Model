@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
+from xgboost.sklearn import XGBRegressor
 from scipy.special import inv_boxcox
 
 # Function to convert hr to time of day (morning, night, afternoon, or evening)
@@ -76,6 +77,7 @@ def main():
         loaded_model = pickle.load(open('XGB-1-regression.pkl', 'rb'))
         result = inv_boxcox(loaded_model.predict(predict_var), 0.33355718858939065)
         st.write(result)
+
 
 
 if __name__ == '__main__':
