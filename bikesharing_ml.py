@@ -5,6 +5,12 @@ import pickle
 from xgboost.sklearn import XGBRegressor
 from scipy.special import inv_boxcox
 
+# Load trained algorithm
+def load_model():
+    loaded_model = pickle.load(open('XGB-1-regression.pkl', 'rb'))
+
+    return loaded_model
+
 # Function to convert hr to time of day (morning, night, afternoon, or evening)
 def time_of_day(hr):
     timeofday = []
@@ -74,10 +80,8 @@ def main():
     button = st.button('Predict')
     
     if button:
-        loaded_model = pickle.load(open('XGB-1-regression.pkl', 'rb'))
-        result = inv_boxcox(loaded_model.predict(predict_var), 0.33355718858939065)
+        result = inv_boxcox(load_model().predict(predict_var), lam = 0.33355718858939065)
         st.write(result)
-
 
 
 if __name__ == '__main__':
