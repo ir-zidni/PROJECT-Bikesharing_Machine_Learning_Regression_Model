@@ -73,7 +73,9 @@ def main():
     timeofdays = time_of_day(hr)
     days = day_number(day)
 
-    predict_var = pd.DataFrame(list(hum,weathersit,holiday,seasons,temp,hr,days,timeofdays ))
+    var = {'hum':hum,'weathersit':weathersit,'holiday':holiday,'season':seasons,'temp':temp,'hr':hr,'day':days,'timeofday':timeofdays}
+    
+    predict_var = pd.DataFrame(data = var, index=[0])
 
     lam = 0.33355718858939065
 
