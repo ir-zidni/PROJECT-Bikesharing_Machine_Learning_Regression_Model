@@ -4,12 +4,6 @@ import pandas as pd
 import pickle
 from scipy.special import inv_boxcox
 
-# Load trained algorithm
-def load_model():
-    loaded_model = pickle.load(open('XGB-1-regression.pkl', 'rb'))
-
-    return loaded_model
-
 # Function to convert hr to time of day (morning, night, afternoon, or evening)
 def time_of_day(hr):
     timeofday = []
@@ -76,12 +70,11 @@ def main():
     predict_var = pd.DataFrame(data = {'hum':hum,'weathersit':weathersit,'holiday':holiday,'season':seasons,'temp':temp,'hr':hr,'day':days,'timeofday':timeofdays}
                                 , index=[0])
 
-    lam = 0.33355718858939065
-
     button = st.button('Predict')
     
     if button:
-        result = inv_boxcox(load_model().predict(predict_var), lam)
+        loaded_model = pickle.load(open('XGB-1-regression.pkl', 'rb'))
+        result = inv_boxcox(loaded_model.predict(predict_var), 0.33355718858939065)
         st.write(result)
 
 
