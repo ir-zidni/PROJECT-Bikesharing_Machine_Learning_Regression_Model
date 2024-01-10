@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+from scipy.special import inv_boxcox
 import pickle
 
 # Load trained algorithm
