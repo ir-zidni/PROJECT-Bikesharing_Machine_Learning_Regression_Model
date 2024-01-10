@@ -83,3 +83,5 @@ def main():
         result = inv_boxcox(load_model().predict(predict_var), lam)
         st.write(result)
    
+if __name__ == '__main__':
+    main()
