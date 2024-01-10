@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
-from scipy.special import inv_boxcox
 
 # Load trained algorithm
 def load_model():
@@ -79,7 +78,7 @@ def main():
     button = st.button('Predict')
     
     if button:
-        result = inv_boxcox(load_model().predict(predict_var), lam = 0.33355718858939065)
+        result = inv_boxcox(load_model().predict(predict_var), 0.33355718858939065)
         st.write(result)
 
 
