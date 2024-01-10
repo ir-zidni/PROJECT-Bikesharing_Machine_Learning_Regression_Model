@@ -72,10 +72,9 @@ def main():
     seasons = season_code(season)
     timeofdays = time_of_day(hr)
     days = day_number(day)
-
-    var = {'hum':hum,'weathersit':weathersit,'holiday':holiday,'season':seasons,'temp':temp,'hr':hr,'day':days,'timeofday':timeofdays}
     
-    predict_var = pd.DataFrame(data = var, index=[0])
+    predict_var = pd.DataFrame(data = {'hum':hum,'weathersit':weathersit,'holiday':holiday,'season':seasons,'temp':temp,'hr':hr,'day':days,'timeofday':timeofdays}
+                                , index=[0])
 
     lam = 0.33355718858939065
 
@@ -84,6 +83,7 @@ def main():
     if button:
         result = inv_boxcox(load_model().predict(predict_var), lam)
         st.write(result)
-   
+
+
 if __name__ == '__main__':
     main()
