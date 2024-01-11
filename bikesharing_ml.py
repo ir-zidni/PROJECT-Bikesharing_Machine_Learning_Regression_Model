@@ -64,10 +64,11 @@ def main():
 
     st.divider()
 
-    st.write('Weathersit Type:', '1: Clear, Few clouds, Partly cloudy, Partly cloudy', 
-             '2: Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist',
-             '3: Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds',
-             '4: Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog')
+    st.write('Weathersit Type:') 
+    st.write('1: Clear, Few clouds, Partly cloudy, Partly cloudy')
+    st.write('2: Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist')
+    st.write('3: Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds')
+    st.write('4: Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog')
     
     st.divider()
 
