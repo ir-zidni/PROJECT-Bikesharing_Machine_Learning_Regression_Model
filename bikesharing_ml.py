@@ -87,7 +87,7 @@ def main():
     button = st.button('Predict')
     
     if button:
-        result = inv_boxcox(load_model().predict(predict_var), lmbda = 0.33355718858939065)
+        result = inv_boxcox(load_model().predict(predict_var), 0.33355718858939065)
         st.write(result)
 
 
