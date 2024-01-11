@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from xgboost.sklearn import XGBRegressor
+from scipy.special import inv_boxcox
 import pickle
 
 # Load trained algorithm
@@ -61,11 +62,11 @@ def main():
 
     st.title('Bikesharing Number of Bikes Prediction')
 
-    hum = st.number_input('Insert normalize humidity value', min_value=0, max_value=1)
+    hum = st.number_input('Insert normalize humidity value', min_value=0, max_value=1, step = 0.01)
     weathersit = st.selectbox('Weather Forecast', [1,2,3,4])
     holiday = st.selectbox('Holiday or not', [0, 1])
     season = st.selectbox('Select Season', ['Winter', 'Summer', 'Spring', 'Fall'])
-    temp = st.number_input('Insert normalize temperature value', min_value=0, max_value=1)
+    temp = st.number_input('Insert normalize temperature value', min_value=0, max_value=1, step = 0.01)
     hr = st.selectbox('Hour of the day', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23])
     day = st.selectbox('Select day', ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday'])
 
@@ -86,7 +87,7 @@ def main():
     button = st.button('Predict')
     
     if button:
-        result = load_model().predict(predict_var)
+        result = inv_boxcox(load_model().predict(predict_var), lmbda = 0.33355718858939065)
         st.write(result)
 
 
