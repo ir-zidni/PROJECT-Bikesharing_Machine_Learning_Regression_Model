@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from xgboost.sklearn import XGBRegressor
-from scipy.special import inv_boxcox
 import pickle
 
 # Load trained algorithm
@@ -87,7 +86,7 @@ def main():
     button = st.button('Predict')
     
     if button:
-        result = inv_boxcox(load_model().predict(predict_var), 0.33355718858939065)
+        result = load_model().predict(predict_var)
         st.write(result)
 
 
