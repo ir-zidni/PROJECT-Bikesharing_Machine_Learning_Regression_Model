@@ -62,11 +62,11 @@ def main():
 
     st.title('Bikesharing Number of Bikes Prediction')
 
-    hum = st.number_input('Insert normalize humidity value', min_value=0, max_value=1, step = 0.01)
+    hum = st.number_input('Insert normalize humidity value', max_value=1)
     weathersit = st.selectbox('Weather Forecast', [1,2,3,4])
     holiday = st.selectbox('Holiday or not', [0, 1])
     season = st.selectbox('Select Season', ['Winter', 'Summer', 'Spring', 'Fall'])
-    temp = st.number_input('Insert normalize temperature value', min_value=0, max_value=1, step = 0.01)
+    temp = st.number_input('Insert normalize temperature value', max_value=1)
     hr = st.selectbox('Hour of the day', [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23])
     day = st.selectbox('Select day', ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday'])
 
